@@ -1,7 +1,9 @@
 from django.shortcuts import render
-from django.http import HttpResponse
 
 # Create your views here.
 def index(request):
-	return HttpResponse('<h1>Hello World</h1>')
+	name = 'Jordan 1 Retro BRED (2016)'
+	price = 210.00
+	context = {'name': name, 'price': price}
+	return render(request, 'index.html', context)
 
