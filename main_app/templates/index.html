@@ -1,35 +1,23 @@
-{% load staticfiles %}
+{% extends 'base.html' %}
 
-<!DOCTYPE html>
-<html>
-<head>
-	<title>SneakerHub</title>
-	<link rel="stylesheet" type="text/css" href="{% static "bootstrap-3.3.7-dist/css/bootstrap.min.css" %}">
-	<link rel="stylesheet" type="text/css" href="{% static "font-awesome-4.6.3/css/font-awesome.min.css" %}">
-	<link rel="stylesheet" type="text/css" href="{% static "style.css" %}">
-</head>
-<body>
-	<div class="container">
-		<nav class="navbar navbar-default navbar-static-top text-center"><a href="/"><img src="{% static "images/logo.png" %}" alt="SneakerHub"></a></nav>
 
-		<div class="row">
-			{% for sneaker in sneakers %}
-			<div class="col-md-4">
-				<div class="sneaker panel panel-default">
-					<div class="sneaker-panel-heading panel-heading">
-						<h2 class="panel-title">{{ sneaker.name }}</h2>
-					</div>
-					<a href="/{{ sneaker.id }}">
-						<div class="sneaker-panel panel-body">
-							<div class="sneaker-image text-center">
-								<img src="{{ sneaker.img_url }}" height="150">
-							</div>
-						</div>
-					</a>
-				</div>
+{% block content %}
+<div class="row">
+	{% for sneaker in sneakers %}
+	<div class="col-md-4">
+		<div class="sneaker panel panel-default">
+			<div class="sneaker-panel-heading panel-heading">
+				<h2 class="panel-title">{{ sneaker.name }}</h2>
 			</div>
-			{% endfor %}
+			<a href="/{{ sneaker.id }}">
+				<div class="sneaker-panel panel-body">
+					<div class="sneaker-image text-center">
+						<img src="{{ sneaker.img_url }}" height="150">
+					</div>
+				</div>
+			</a>
 		</div>
 	</div>
-</body>
-</html>
+	{% endfor %}
+</div>
+{% endblock %}

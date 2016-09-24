@@ -1,0 +1,19 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>SneakerHub</title>
+	<link rel="stylesheet" type="text/css" href="{% static "bootstrap-3.3.7-dist/css/bootstrap.min.css" %}">
+	<link rel="stylesheet" type="text/css" href="{% static "font-awesome-4.6.3/css/font-awesome.min.css" %}">
+	<link rel="stylesheet" type="text/css" href="{% static "style.css" %}">
+</head>
+<body>
+	<div class="container">
+		<nav class="navbar navbar-default navbar-static-top text-center"><a href="/"><img src="{% static "images/logo.png" %}" alt="SneakerHub"></a></nav>
+
+		{% block content %}
+		{% endblock %}
+	</div>
+</body>
+</html>
