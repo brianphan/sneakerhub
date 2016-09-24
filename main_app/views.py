@@ -14,8 +14,8 @@ def detail(request, sneaker_id):
 	return render(request, 'detail.html', {'sneaker': sneaker})
 
 def post_sneaker(request):
-	form = SneakerForm(request.POST)
+	form = SneakerForm(request.POST, request.FILES)
 	if form.is_valid():
 		form.save(commit = True)
-		
+
 	return HttpResponseRedirect('/')

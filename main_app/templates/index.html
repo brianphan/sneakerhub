@@ -12,7 +12,7 @@
 			<a href="/{{ sneaker.id }}">
 				<div class="sneaker-panel panel-body">
 					<div class="sneaker-image text-center">
-						<img src="{{ sneaker.img_url }}" height="150">
+						<img src="{{ sneaker.image.url }}" height="150">
 					</div>
 				</div>
 			</a>
@@ -24,7 +24,7 @@
 <div class="add-sneaker-form panel panel-default">
 	<div class="panel-heading"><h2 class="panel-title">Add Sneaker</h2></div>
 	<div class="panel-body">
-		<form action="post_url/" method="post">
+		<form enctype="multipart/form-data" action="post_url/" method="post">
 			{% csrf_token %}
 			{{ form.as_p }}
 			<input type="submit" value="Submit"/>

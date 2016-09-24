@@ -4,4 +4,4 @@ from .models import Sneaker
 class SneakerForm(forms.ModelForm):
 	class Meta:
 		model = Sneaker
-		fields = ['name', 'brand', 'price', 'img_url']
+		fields = ['name', 'brand', 'price', 'image']
