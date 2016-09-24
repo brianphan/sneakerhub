@@ -16,9 +16,6 @@ def detail(request, sneaker_id):
 def post_sneaker(request):
 	form = SneakerForm(request.POST)
 	if form.is_valid():
-		sneaker = Sneaker(name = form.cleaned_data['name'],
-							brand = form.cleaned_data['brand'],
-							price = form.cleaned_data['price'],
-							img_url = form.cleaned_data['img_url'])
-		sneaker.save()
+		form.save(commit = True)
+		
 	return HttpResponseRedirect('/')

@@ -21,9 +21,15 @@
 	{% endfor %}
 </div>
 
-<form action="post_url/" method="post">
-	{% csrf_token %}
-	{{ form.as_p }}
-	<input type="submit" value="Submit"/>
-</form>
+<div class="add-sneaker-form panel panel-default">
+	<div class="panel-heading"><h2 class="panel-title">Add Sneaker</h2></div>
+	<div class="panel-body">
+		<form action="post_url/" method="post">
+			{% csrf_token %}
+			{{ form.as_p }}
+			<input type="submit" value="Submit"/>
+		</form>
+	</div>
+</div>
+
 {% endblock %}

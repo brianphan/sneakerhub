@@ -1,7 +1,7 @@
 from django import forms
+from .models import Sneaker
 
-class SneakerForm(forms.Form):
-	name = forms.CharField(label='Name', max_length=100)
-	brand = forms.CharField(label='Brand', max_length=100)
-	price = forms.DecimalField(label='Price', max_digits=100, decimal_places=2)
-	img_url = forms.CharField(label='Image URL', max_length=100)
+class SneakerForm(forms.ModelForm):
+	class Meta:
+		model = Sneaker
+		fields = ['name', 'brand', 'price', 'img_url']
