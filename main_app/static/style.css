@@ -1,0 +1,8 @@
+.sneaker-panel {
+  display: flex;
+  justify-content: center;
+}
+
+.sneaker-info-table {
+  align-self: center;
+}

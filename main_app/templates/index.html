@@ -1,11 +1,41 @@
+{% load staticfiles %}
+
 <!DOCTYPE html>
 <html>
 <head>
 	<title>SneakerHub</title>
+	<link rel="stylesheet" type="text/css" href="{% static "bootstrap-3.3.7-dist/css/bootstrap.min.css" %}">
+	<link rel="stylesheet" type="text/css" href="{% static "font-awesome-4.6.3/css/font-awesome.min.css" %}">
+	<link rel="stylesheet" type="text/css" href="{% static "style.css" %}">
 </head>
 <body>
-	<h1>SneakerHub</h1>
-	<p>{{ name }}</p>
-	<p>{{ price }}</p>
+	<div class="container">
+		<nav class="navbar navbar-default navbar-static-top text-center"><img src="{% static "images/logo.png" %}" alt="SneakerHub"></nav>
+
+		{% for sneaker in sneakers %}
+		<div class="sneaker panel panel-default">
+			<div class="sneaker-panel-heading panel-heading">
+				<h2 class="panel-title">{{ sneaker.name }}</h2>
+			</div>
+			<div class="sneaker-panel panel-body">
+				<div class="sneaker-image col-md-6 text-center">
+					<img src="{{ sneaker.img_url }}" height="150">
+				</div>
+				<div class="sneaker-info col-md-6">
+					<table class="sneaker-info-table table table-bordered col-md-6">
+					<tr>
+						<th class="text-right"><i class="fa fa-list fa-fw"></i>Brand:</th>
+						<td>{{ sneaker.brand }}</td>
+					</tr>
+					<tr>
+						<th class="text-right"><i class="fa fa-usd fa-fw"></i>Price:</th>
+						<td>{{ sneaker.price }}</td>
+					</tr>
+				</table>
+				</div>
+			</div>
+		</div>
+		{% endfor %}
+	</div>
 </body>
 </html>
